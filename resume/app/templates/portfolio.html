@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<section>
+  <section>
+    <div class="innerPageBannerCol">
+      <div class="container">
+        <div class="row g-4 g-md-3 align-items-center">
+          <div class="col-md-6">
+            <div class="bannerContent">
+              
+              <p><h2 class="xlTitle" style="color:blue">Links of my live projects </h2>
+                <style>
+                  .logoColl a:hover {
+                    color: red;
+                  }
+                </style>
+                <div class="col-auto">
+                  <div class="logoColl"><a href="http://instaclone.pythonanywhere.com/">Instagram Clone Link</a></div>
+                  </div>
+                <div class="col-auto">
+                  <div class="logoColl"><a href="https://supekarabhi.pythonanywhere.com/">E-Commerce Website Link</a></div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="logoColl"><a href="https://github.com/supekarabhi">Portfolio Link</a></div>
+                    </div>
+                  <div class="col-auto">
+                    <div class="logoColl"><a href="https://maulikrupanersery.000webhostapp.com/">Greenhouse Management Website Link</a></div>
+                    </div>
+                </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="lightBg">
+      <div class="container">
+        <div class="portfolioContentMain">
+          <div class="row g-4 g-md-6 g-lg-4 portfolioRow">
+            {% for obj in object_list %}
+            <div class="col-md-6 pColMain">
+              <div class="pCol">
+                <a href="{% url 'app:portfoliodetail' slug=obj.slug %}">
+                  {% if obj.image %}
+                    <img src="{{ obj.image.url }}" alt="Portfolio Image" class="pImg">
+                  {% else %}
+                    <p>No image available</p>
+                  {% endif %}
+                </a>
+                
+                <p><div class="projectInfo">
+                  <h3 class="projectTitle">{{ obj.name }}</h3><p></p>
+                  <p class="projectDescription">{{ obj.description }}</p>
+                </div>
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  </section>
+<!-- ================================
+End Content
+================================= -->
+{% endblock%}    

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<section>
+  <div class="innerPageBannerCol">
+    <div class="container">
+      <div class="row g-4 g-md-3  align-items-center">
+        <div class="col-md-6">
+          <div class="bannerContent">
+            <h1 class="xlTitle pb-md-0" style="color:blue">Contact Details</h1>
+            <p><h4>Name : Abhijit Supekar<br>Email : supekarabhi7@gmail.com<br>Contact Number : 8767093841</h4></p>
+            <p><h4>Social Media Accounts<br>
+              <p><div class="row">
+                <div class="col-auto">
+                  <div class="logoCol"><a href="https://www.instagram.com/supekarabhi_07/"><img src="{% static 'images/insta.jpg' %}" width="50" height="50" alt="..."></a></div>
+                  </div>
+                <div class="col-auto">
+                  <div class="logoCol"><a href="https://twitter.com/abhijitsupekar7/"><img src="{% static 'images/twitter.jpg' %}" width="50" height="50" alt="..."></a></div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="logoCol"><a href="https://wa.me/8767093841?text=Hello%20there!"><img src="{% static 'images/whatsapp.jpg' %}" width="50" height="50" alt="..."></a></div>
+                    </div>
+            </div>
+            </p>
+            </h4></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  
+  <div class="lightBg">
+    <div class="container"><br><p><h4 style="color:purple">Get in touch with me</h4></p>
+        <form id="contactForm" method="POST" action="/contact/">
+        {% csrf_token %}
+            <label for="name">Name</label>
+            {{form.name}}
+
+            <label for="email">Email</label>
+            {{form.email}}
+
+            <label for="subject">Message</label>
+            {{form.message}}
+
+            <input class='btn btnPrimary' type="submit" value="Submit">
+        </form>
+    </div>
+  </div>
+</section>
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
+    
