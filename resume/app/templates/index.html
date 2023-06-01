@@ -127,7 +127,9 @@ Start Content
         <div class="col">
           <h4 class="smText regular" style="color:blue">Certificates</h4>
         </div>
-
+        <div class="col-auto">
+          <a href="{% url 'app:blog' %}" class="simpleLink" style="color:red">View all</a>
+        </div>
       </div>
       <div class="sliderOuter">
         <div class="swiper certificatesSlider">
@@ -168,7 +170,7 @@ Start Content
             <h4 class="smText regular" style="color:blue">Personal Projects</h4>
           </div>
           <div class="col-auto">
-            <a href="{% url 'app:portfolio' %}" class="simpleLink">View all</a>
+            <a href="{% url 'app:portfolio' %}" class="simpleLink" style="color:red">View all</a>
           </div>
         </div>
        
@@ -176,9 +178,8 @@ Start Content
             <div class="row g-4 align-items-center">
                 <div class="col-md-auto">
                     <div class="portfolioImgCol">
-                                <img src="static/images/suprememart1.jpg" alt="..." style="padding-right:20px">
-                                <img src="static/images/pharmasy.png" alt="..." style="padding-right:20px; padding-left:20px">
-                                <img src="static/images/instagram.jpg" alt="..." style="padding-left:20px">   
+                                <img src="static/images/suprememart1.jpg" alt="..." >
+                                
                     </div>
                 </div>
             </div>
@@ -219,7 +220,7 @@ Start Content
             <div class="test-swiper-button-prev swiper-button-prev swiperBtnStyle"></div>
           </div>
 
-================================= -->
+
 
         </div>
       </div>
@@ -259,5 +260,5 @@ Start Content
   </div>
 </section>
 {% endblock %}
-<!-- ================================
-End Content
+================================= -->
+
